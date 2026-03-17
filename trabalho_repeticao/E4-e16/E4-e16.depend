@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1773790709 source:c:\users\alunodev06\desktop\trabalho_repeticao\e4-e16\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
