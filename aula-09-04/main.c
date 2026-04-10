@@ -5,7 +5,7 @@
 int main()
 {
     int val1[TAM], val2[TAM], val3[TAM];
-    int i, j, Ls, flag = 1, aux, menu;
+    int i, j, Ls, flag, aux, menu;
 
     printf("-----SUGERINDO MEGA SENA-----");
     while(1){
@@ -25,7 +25,8 @@ int main()
 
             //Ordenando os valores dos arrays
             while(flag == 1){
-                for(i = 0; i < 5; i++){
+                flag = 1;
+                for(i = 0; i < (TAM - 1); i++){
                     if(val1[i] > val1[i + 1]){
                         aux = val1[i];
                         val1[i] = val1[i + 1];
