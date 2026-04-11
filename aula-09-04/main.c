@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define MIN 1
+#define MAX 60
 #define TAM 6
 
 int main()
 {
     int val1[TAM], val2[TAM], val3[TAM];
-    int i, j, Ls, flag, aux, menu;
+    int i, j, ls = TAM - 1, flag, aux, menu;
 
     printf("-----SUGERINDO MEGA SENA-----");
     while(1){
@@ -18,23 +20,22 @@ int main()
             printf("\n\nGERANDO JOGOS...\n\n");
             //Gerando valores aleatorios para os arrays
             for(i = 0; i < TAM; i++){
-                    val1[i] = rand() % 60 + 1;
-                    val2[i] = rand() % 60 + 1;
-                    val3[i] = rand() % 60 + 1;
+                    val1[i] = rand() % (MAX - MIN + 1) + MIN;
+                    val2[i] = rand() % (MAX - MIN + 1) + MIN;
+                    val3[i] = rand() % (MAX - MIN + 1) + MIN;
             }
 
             //Ordenando os valores dos arrays
-            while(flag == 1){
-                flag = 1;
-                for(i = 0; i < (TAM - 1); i++){
-                    if(val1[i] > val1[i + 1]){
-                        aux = val1[i];
-                        val1[i] = val1[i + 1];
-                        val1[i + 1] = aux;
-                        flag = 0;
+                for(int j = 0; j < (TAM - 1); j++){
+                    for(i = 0; i < ls; i++){    
+                        if(val1[i] > val1[i + 1]){
+                            aux = val1[i];
+                            val1[i] = val1[i + 1];
+                            val1[i + 1] = aux;    
+                        } 
                     }
-                }
-            }
+                    ls--;
+                }                
 
             printf("---SEUS JOGOS---");
             for(i = 1; i < 4; i++){
