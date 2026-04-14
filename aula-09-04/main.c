@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #define MIN 1
 #define MAX 60
 #define TAM 6
 
 int main()
 {
+    srand(time(NULL));
     int val1[TAM], val2[TAM], val3[TAM];
-    int i, j, ls = TAM - 1, flag = 1, aux, menu;
+    int i, j, flag, aux, menu;
 
     printf("-----SUGERINDO MEGA SENA-----");
     while(1){
@@ -18,16 +20,31 @@ int main()
         else if(menu < 0 || menu > 1) printf("\nFavor digite um valor valido...\n");
         else{
             printf("\n\nGERANDO JOGOS...\n\n");
-            //Gerando valores aleatorios para os arrays
+            //Gerando valores pseudoaleatorios para os arrays, sem repeticao
             for(i = 0; i < TAM; i++){
-                    val1[i] = rand() % (MAX - MIN + 1) + MIN;
-                    val2[i] = rand() % (MAX - MIN + 1) + MIN;
-                    val3[i] = rand() % (MAX - MIN + 1) + MIN;
+                    while(1){ //valores 1
+                        val1[i] = rand() % (MAX - MIN + 1) + MIN;
+                        if(i == 0) break;
+                        else if (val1[i] == val1[i-1]) continue;
+                        else break;
+                    }
+                    while(1){ //valores 2
+                        val2[i] = rand() % (MAX - MIN + 1) + MIN;
+                        if(i == 0) break;
+                        else if (val2[i] == val2[i-1]) continue;
+                        else break;
+                    }
+                    while(1){ //valores 3
+                        val3[i] = rand() % (MAX - MIN + 1) + MIN;
+                        if(i == 0) break;
+                        else if (val3[i] == val3[i-1]) continue;
+                        else break;
+                    }
             }
 
             //Ordenando os valores dos arrays
-                
-            while (flag = 1)
+            //Ordenando valores 1
+            while (1)
             {
                 flag = 0;
                 for (i = 0; i < TAM - 1; i++){
@@ -43,7 +60,41 @@ int main()
                     break;
                 }
             }
-                            
+            //Ordenando valores 2
+            while (1)
+            {
+                flag = 0;
+                for (i = 0; i < TAM - 1; i++){
+                    if(val2[i] > val2[i+1]){
+                        aux = val2[i];
+                        val2[i] = val2[i+1];
+                        val2[i+1] = aux;
+                        flag = 1;
+                    }
+                }
+
+                if(flag == 0){
+                    break;
+                }
+            }
+            //Ordenando valores 3
+            while (1)
+            {
+                flag = 0;
+                for (i = 0; i < TAM - 1; i++){
+                    if(val3[i] > val3[i+1]){
+                        aux = val3[i];
+                        val3[i] = val3[i+1];
+                        val3[i+1] = aux;
+                        flag = 1;
+                    }
+                }
+
+                if(flag == 0){
+                    break;
+                }
+            }
+
 
             //Printando valores
             printf("---SEUS JOGOS---");
