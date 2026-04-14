@@ -7,7 +7,7 @@
 int main()
 {
     int val1[TAM], val2[TAM], val3[TAM];
-    int i, j, ls = TAM - 1, flag, aux, menu;
+    int i, j, ls = TAM - 1, flag = 1, aux, menu;
 
     printf("-----SUGERINDO MEGA SENA-----");
     while(1){
@@ -26,17 +26,26 @@ int main()
             }
 
             //Ordenando os valores dos arrays
-                for(int j = 0; j < (TAM - 1); j++){
-                    for(i = 0; i < ls; i++){    
-                        if(val1[i] > val1[i + 1]){
-                            aux = val1[i];
-                            val1[i] = val1[i + 1];
-                            val1[i + 1] = aux;    
-                        } 
+                
+            while (flag = 1)
+            {
+                flag = 0;
+                for (i = 0; i < TAM - 1; i++){
+                    if(val1[i] > val1[i+1]){
+                        aux = val1[i];
+                        val1[i] = val1[i+1];
+                        val1[i+1] = aux;
+                        flag = 1;
                     }
-                    ls--;
-                }                
+                }
 
+                if(flag == 0){
+                    break;
+                }
+            }
+                            
+
+            //Printando valores
             printf("---SEUS JOGOS---");
             for(i = 1; i < 4; i++){
                 printf("\nJOGO %d = ", i);
