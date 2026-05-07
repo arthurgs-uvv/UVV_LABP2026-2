@@ -23,9 +23,15 @@ int main()
 }
 
 /*
-    MANIPULAÇÃO DE STRING
-    - Medir: strlen;
-    - Copiar: strcpy;
-    - Comparar: strcmp;
-    - Concatenar: strcat;
+    MANIPULAï¿½ï¿½O DE STRING
+-- Medir: strlen;
+-- Copiar: strcpy;
+-- Comparar: strcmp;
+-- Concatenar: strcat;
+
+    TIPOS
+-- float: numeros reais (%f)
+-- int: numeros inteiros (%i)
+-- unsigned: numeros inteiros positivos (%u)
+
 */
