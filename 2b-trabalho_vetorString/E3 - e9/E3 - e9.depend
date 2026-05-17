@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1779037857 source:c:\users\arth_\Área de trabalho\exe-vetorstring\e3 - e9\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
