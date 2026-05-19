@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1779231756 source:c:\users\alunodev06\desktop\aula-05-19\e1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
